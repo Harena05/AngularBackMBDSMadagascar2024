@@ -13,6 +13,13 @@ global.__root   = __dirname + '/';
 
 app.use(cors());
 
+var corsOptions = {
+  origin: 'https://angularfrontmbdsmadagascar2024-630b.onrender.com',
+  optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
+
 // Pour accepter les connexions cross-domain (CORS)
 app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
