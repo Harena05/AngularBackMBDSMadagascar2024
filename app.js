@@ -14,7 +14,7 @@ global.__root   = __dirname + '/';
 app.use(cors());
 
 var corsOptions = {
-  origin: 'https://angularfrontmbdsmadagascar2024-630b.onrender.com',
+  origin: 'https://angularbackmbdsmadagascar2024.onrender.com',
   optionsSuccessStatus: 200
 };
 
