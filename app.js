@@ -4,7 +4,7 @@ var db = require('./db');
 let bodyParser = require('body-parser');
 let assignment = require('./routes/assignments');
 let matiere = require('./controller/MatiereController');
-const cors = require('cors');
+var cors = require('cors');
 
 global.__root   = __dirname + '/'; 
 // global.__basedir = __dirname;
@@ -15,9 +15,10 @@ app.use(cors());
 
 // Pour accepter les connexions cross-domain (CORS)
 app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+  res.setHeader('Access-Control-Allow-Credentials', true);
   next();
 });
 
